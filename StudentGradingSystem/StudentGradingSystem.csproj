@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <UserSecretsId>aspnet-StudentGradingSystem-7182acef-9b00-4b52-977c-f8ca38510232</UserSecretsId>
+    <UserSecretsId>aspnet-StudentGradingSystem-e50d2482-aeb3-47a0-9035-e708f9e91f9d</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
