@@ -23,7 +23,7 @@ namespace StudentGradingSystem
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
-
+            
             if (env.IsDevelopment())
             {
                 // For more details on using the user secret store see https://go.microsoft.com/fwlink/?LinkID=532709
@@ -32,6 +32,8 @@ namespace StudentGradingSystem
 
             builder.AddEnvironmentVariables();
             Configuration = builder.Build();
+            
+            
         }
 
         public IConfigurationRoot Configuration { get; }
@@ -42,16 +44,17 @@ namespace StudentGradingSystem
             // Add framework services.
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
-            services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>()
+            
+            services.AddIdentity<ApplicationUser, IdentityRole<int>>()
+                .AddEntityFrameworkStores<ApplicationDbContext, int>()
                 .AddDefaultTokenProviders();
 
             services.AddMvc();
-
+            
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -83,6 +86,8 @@ namespace StudentGradingSystem
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
-        }
+            var context = app.ApplicationServices.GetService<ApplicationDbContext>();
+            context.Database.Migrate();
+        }   
     }
 }
