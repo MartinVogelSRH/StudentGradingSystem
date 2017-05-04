@@ -15,6 +15,14 @@ namespace StudentGradingSystem.Data
             
         {            
         }
+        public DbSet<GroupModule> GroupModule { get; set; }
+        public DbSet<Module> Module { get; set; }
+        public DbSet<ModuleDetails> ModuleDetails { get; set; }
+        public DbSet<Questionnaire> Questionnaire { get; set; }
+        public DbSet<QuestionnaireAnswers> QuestionnaireAnswers { get; set; }
+        public DbSet<QuestionnaireCategories> QuestionnaireCategories { get; set; }
+        public DbSet<QuestionnaireQuestions> QuestionnaireQuestions { get; set; }
+        public DbSet<StudentCourse> StudentCourse { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -23,6 +31,7 @@ namespace StudentGradingSystem.Data
             // Customize the ASP.NET Identity model and override the defaults if needed.
             // For example, you can rename the ASP.NET Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);
+            builder.HasDefaultSchema("StudentGradingSystem");
             builder.Entity<ApplicationUser>(entity =>
             {
                 entity.ToTable(name: "AspNetUser", schema: "Security");
@@ -73,6 +82,22 @@ namespace StudentGradingSystem.Data
                 entity.Property(e => e.UserId).HasColumnName("AspNetUserId");
 
             });
+            //builder.Entity<GroupModule>()
+            //    .HasKey(c => new { c.ModuleDetail, c.GroupID });
+            //builder.Entity<Module>()
+            //    .HasKey(c => new { c.ModuleID });
+            //builder.Entity<ModuleDetails>()
+            //    .HasKey(c => new { c.ModuleID, c.CourseNumber });
+            //builder.Entity<Questionnaire>()
+            //    .HasKey(c => new { c.QuestionnaireID });
+            //builder.Entity<QuestionnaireAnswers>()
+            //    .HasKey(c => new { c.Question, c.AnswerID });
+            //builder.Entity<QuestionnaireCategories>()
+            //    .HasKey(c => new { c.QuestionnaireID, c.CategoryID });
+            //builder.Entity<QuestionnaireQuestions>()
+            //    .HasKey(c => new { c.QuestionnaireCategory, c.QuestionID });
+            //builder.Entity<StudentCourse>()
+            //    .HasKey(c => new { c.Course, c.UserNameStudent });
         }
     }
 }
