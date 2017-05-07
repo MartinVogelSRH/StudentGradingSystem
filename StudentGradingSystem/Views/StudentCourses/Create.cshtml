@@ -1,0 +1,77 @@
+@model StudentGradingSystem.Models.StudentCourse
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<form asp-action="Create">
+    <div class="form-horizontal">
+        <h4>StudentCourse</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="UserNameStudent" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="UserNameStudent" class="form-control" />
+                <span asp-validation-for="UserNameStudent" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="SelfEvaluationID" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="SelfEvaluationID" class="form-control" />
+                <span asp-validation-for="SelfEvaluationID" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="AnswerID" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="AnswerID" class="form-control" />
+                <span asp-validation-for="AnswerID" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="GroupGradeOK" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="GroupGradeOK" class="form-control" />
+                <span asp-validation-for="GroupGradeOK" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="SelfEvaluationGrade" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="SelfEvaluationGrade" class="form-control" />
+                <span asp-validation-for="SelfEvaluationGrade" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProfessorGuessGrade" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ProfessorGuessGrade" class="form-control" />
+                <span asp-validation-for="ProfessorGuessGrade" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Grade" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Grade" class="form-control" />
+                <span asp-validation-for="Grade" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

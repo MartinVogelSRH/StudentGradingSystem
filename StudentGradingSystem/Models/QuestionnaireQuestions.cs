@@ -7,6 +7,7 @@ namespace StudentGradingSystem.Models
 {
     public class QuestionnaireQuestions
     {
+        public int QuestionnaireQuestionsID {get;set;}
         public QuestionnaireCategories QuestionnaireCategory { get; set; }
         public int QuestionID { get; set; }
         public string Description { get; set; }

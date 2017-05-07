@@ -1,0 +1,60 @@
+@model StudentGradingSystem.Models.StudentCourse
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>StudentCourse</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UserNameStudent)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserNameStudent)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SelfEvaluationID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SelfEvaluationID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AnswerID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AnswerID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.GroupGradeOK)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.GroupGradeOK)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SelfEvaluationGrade)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SelfEvaluationGrade)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProfessorGuessGrade)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProfessorGuessGrade)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Grade)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Grade)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.StudentCourseID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

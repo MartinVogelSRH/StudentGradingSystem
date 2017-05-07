@@ -1,0 +1,65 @@
+@model StudentGradingSystem.Models.StudentCourse
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>StudentCourse</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <input type="hidden" asp-for="StudentCourseID" />
+        <dt>
+            @Html.DisplayNameFor(model => model.UserNameStudent)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserNameStudent)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SelfEvaluationID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SelfEvaluationID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AnswerID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AnswerID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.GroupGradeOK)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.GroupGradeOK)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SelfEvaluationGrade)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SelfEvaluationGrade)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProfessorGuessGrade)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProfessorGuessGrade)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Grade)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Grade)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </form>
+</div>

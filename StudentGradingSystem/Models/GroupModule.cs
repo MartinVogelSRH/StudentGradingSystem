@@ -7,8 +7,9 @@ namespace StudentGradingSystem.Models
 {
     public class GroupModule
     {
+        
         public ModuleDetails ModuleDetail { get; set; }
-        public int GroupID { get; set; }
+        public int GroupModuleID { get; set; }
         public string GroupName { get; set; }
         public ICollection<StudentCourse> StudentCourse { get; set; }
     }

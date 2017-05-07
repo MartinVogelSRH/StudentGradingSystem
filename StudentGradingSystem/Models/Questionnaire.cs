@@ -11,7 +11,7 @@ namespace StudentGradingSystem.Models
         public ICollection<Module> Module { get; set; }
         public ICollection<ModuleDetails> ModuleDetails { get; set; }
         public ICollection<QuestionnaireCategories> QuestionnaireCategories { get; set; }
-        public ICollection<StudentCourse> StudentCourse { get; set; }
+        //public ICollection<StudentCourse> StudentCourse { get; set; }
 
 
     }

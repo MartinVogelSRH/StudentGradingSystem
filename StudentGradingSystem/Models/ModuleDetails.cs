@@ -7,6 +7,7 @@ namespace StudentGradingSystem.Models
 {
     public class ModuleDetails
     {
+        public int ModuleDetailsID { get; set; }
         public Module ModuleID { get; set; }
         public int CourseNumber { get; set; }
         public Questionnaire QuestionnaireID { get; set; }
