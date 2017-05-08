@@ -8,9 +8,10 @@ using StudentGradingSystem.Data;
 namespace StudentGradingSystem.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170508084144_MakingPropoertiesOptional")]
+    partial class MakingPropoertiesOptional
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasDefaultSchema("StudentGradingSystem")
