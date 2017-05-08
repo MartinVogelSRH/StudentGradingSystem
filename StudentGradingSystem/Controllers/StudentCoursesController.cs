@@ -23,6 +23,7 @@ namespace StudentGradingSystem.Controllers
         public async Task<IActionResult> Index()
         {
             return View(await _context.StudentCourse.ToListAsync());
+            
         }
 
         // GET: StudentCourses/Details/5
@@ -35,6 +36,7 @@ namespace StudentGradingSystem.Controllers
 
             var studentCourse = await _context.StudentCourse
                 .SingleOrDefaultAsync(m => m.StudentCourseID == id);
+            
             if (studentCourse == null)
             {
                 return NotFound();

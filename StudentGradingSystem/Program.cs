@@ -9,6 +9,7 @@ namespace StudentGradingSystem
 {
     public class Program
     {
+        private static System.Threading.CancellationTokenSource cancelTokenSource = new System.Threading.CancellationTokenSource();
         public static void Main(string[] args)
         {
             var host = new WebHostBuilder()
@@ -20,6 +21,11 @@ namespace StudentGradingSystem
                 .Build();
 
             host.Run();
+        }
+        public static void Shutdown()
+        {
+            
+            cancelTokenSource.Cancel();
         }
     }
 }

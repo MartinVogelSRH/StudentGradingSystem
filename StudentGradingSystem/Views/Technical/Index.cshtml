@@ -4,5 +4,26 @@
 }
 
 <h1>Technical Controller - Index page</h1>
-
+<div>
+    You are running this Application in the @Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") Environment
+</div>
+@{ 
+    if (ViewData["DropDBResult"] != null)
+    {
+        <script>alert('Database dropped and recreated')</script>
+    }
+    if (ViewData["DataDeleted"] != null)
+    {
+        <script>alert('Data was deleted')</script>
+    }
+    if (ViewData["SampleDataInserted"] != null)
+    {
+        <script>alert('Sample Data was Added')</script>
+    }
+}        
+    <environment names="Development">
+        <div><a asp-area="" asp-controller="Technical" asp-action="DeleteCreate">Delete and Recreate the database</a></div>
+        <div><a asp-area="" asp-controller="Technical" asp-action="InsertSampleData">Create sample Data</a></div>
+        <div><a asp-area="" asp-controller="Technical" asp-action="DeleteData">Delete the Data</a></div>
+    </environment>
 
