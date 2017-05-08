@@ -1,0 +1,18 @@
+@model StudentGradingSystem.Models.Questionnaire
+
+@{
+    ViewData["Title"] = "Fill";
+}
+
+<h2>Fill</h2>
+
+<div>
+    <h4>Questionnaire</h4>
+    <hr />
+    <dl class="dl-horizontal">
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.QuestionnaireID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
