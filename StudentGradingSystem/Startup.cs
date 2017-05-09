@@ -84,7 +84,7 @@ namespace StudentGradingSystem
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Account}/{action=Login}/{id?}");
+                    template: "{controller=Home}/{action=Homepage}/{id?}");
             });
             var context = app.ApplicationServices.GetService<ApplicationDbContext>();
             context.Database.Migrate();
