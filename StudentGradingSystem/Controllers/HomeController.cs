@@ -64,5 +64,10 @@ namespace StudentGradingSystem.Controllers
         {
             return View();
         }
+
+        //Course-Grade
+        public IActionResult Grade(){
+            return View();
+        }
     }
 }
