@@ -69,5 +69,9 @@ namespace StudentGradingSystem.Controllers
         public IActionResult Grade(){
             return View();
         }
+        
+        public ActionResult GradeStudent(){
+            return RedirectToAction("Grade","Course");
+        }
     }
 }

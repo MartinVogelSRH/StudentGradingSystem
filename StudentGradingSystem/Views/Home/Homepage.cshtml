@@ -1,4 +1,5 @@
-﻿@{
+﻿
+@{
     ViewData["Title"] = "Home Page";
 
 }
@@ -57,8 +58,11 @@
             </div>
             <div class="col-sm-4 col-md-4 col-lg-3 mt-4">
                 Professor
-                <a href="~/Course/Grade">
-                    <div class="card">
+                <!--Click this card will go to Course/Grade Page -->
+                <!--different way
+                <a href="~/Course/Grade"> -->
+                <a asp-area="" asp-controller="Home" asp-action="GradeStudent" >
+                    <div class="card" >
                         <div class="card-header">
                             <div class="tile purple">
                                 <h3 class="title">Grade Students</h3>
