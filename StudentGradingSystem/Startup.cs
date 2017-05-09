@@ -12,7 +12,7 @@ using Microsoft.Extensions.Logging;
 using StudentGradingSystem.Data;
 using StudentGradingSystem.Models;
 using StudentGradingSystem.Services;
-using MySql.Data.EntityFrameworkCore;
+using MySQL.Data.EntityFrameworkCore.Extensions;
 using MySql.Data.MySqlClient;
 
 namespace StudentGradingSystem
@@ -46,6 +46,7 @@ namespace StudentGradingSystem
             // Add framework services.
 
             services.AddDbContext<ApplicationDbContext>(options =>
+            
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddIdentity<ApplicationUser, IdentityRole<int>>()
