@@ -12,6 +12,8 @@ using Microsoft.Extensions.Logging;
 using StudentGradingSystem.Data;
 using StudentGradingSystem.Models;
 using StudentGradingSystem.Services;
+using MySql.Data.EntityFrameworkCore;
+using MySql.Data.MySqlClient;
 
 namespace StudentGradingSystem
 {
@@ -42,6 +44,7 @@ namespace StudentGradingSystem
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
+
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
@@ -87,7 +90,7 @@ namespace StudentGradingSystem
                     template: "{controller=Account}/{action=Login}/{id?}");
             });
             var context = app.ApplicationServices.GetService<ApplicationDbContext>();
-            context.Database.Migrate();
+            //context.Database.Migrate();
         }   
     }
 }
