@@ -189,7 +189,6 @@ namespace StudentGradingSystem.Controllers
                         GroupModule ExampleGroupModule = new GroupModule
                         { 
                             ModuleDetail = ExampleModuleDetails,
-                            GroupModuleID = 1,
                             GroupName ="abc",
                         };
                          StudentCourse ExampleStudentCourse = new StudentCourse
