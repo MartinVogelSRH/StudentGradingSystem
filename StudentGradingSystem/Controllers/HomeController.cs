@@ -65,13 +65,19 @@ namespace StudentGradingSystem.Controllers
             return View();
         }
 
-        //Course-Grade
+        //Course/Grade
         public IActionResult Grade(){
             return View();
         }
         
         public ActionResult GradeStudent(){
             return RedirectToAction("Grade","Course");
+        }
+
+        //Questionnaire/Fill
+
+        public IActionResult Fill(){
+            return View();
         }
     }
 }
