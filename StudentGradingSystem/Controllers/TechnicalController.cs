@@ -171,7 +171,7 @@ namespace StudentGradingSystem.Controllers
                       }; 
                       Module ExampleModule = new Module
                       {
-                         ModuleID =1,
+                         
                          TemplateQuestionnaireID = ExampleQuestionnaire,
                          Description = "SAD"
                       };
@@ -194,7 +194,7 @@ namespace StudentGradingSystem.Controllers
                         };
                          StudentCourse ExampleStudentCourse = new StudentCourse
                         {
-                          StudentCourseID = 1,
+                          
                           UserNameStudent  = "Student1@abc.come",
                           Course= ExampleModuleDetails,
                           SelfEvaluationID  = 1,
