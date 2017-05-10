@@ -3,7 +3,15 @@
     ViewData["Title"] = "Home Page";
 
 }
+<script type="text/javascript">
+    function getSelection() {
+        var answer = document.getElementById("test");
+        if (answer[answer.selectedIndex].value != null) {
+            alert(answer[answer.selectedIndex].value);
+        }
+    }
 
+</script>
     <div class="container">
     @*<br />
     <p><em>Welcome @User.Identity.Name</em></p>
@@ -15,7 +23,7 @@
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="Description">Module Name:</label>
                     <div class="col-sm-10">
-                        <select asp-items="@(new SelectList(@ViewBag.ListOfModules,"Id","Value"))" class="form-control">
+                        <select id="test" asp-items="@(new SelectList(@ViewBag.ListOfModules,"Id","Value"))" class="form-control">
                         </select>
                         <a href="#">
                             <span class="glyphicon glyphicon-plus-sign"></span>
@@ -58,7 +66,7 @@
                 <!--Click this card will go to Course/Grade Page -->
                 <!--different way
                 <a href="~/Course/Grade"> -->
-                <a asp-area="" asp-controller="Course" asp-action="Grade" >
+                <a href="javascript:getSelection()">
                     <div class="card" >
                         <div class="card-header">
                             <div class="tile purple">
