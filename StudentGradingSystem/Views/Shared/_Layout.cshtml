@@ -43,6 +43,15 @@
         </div>
     </nav>
     <div class="container body-content">
+        <br />
+        @{
+            if (User.Identity.Name != null)
+            {
+
+                <p><em>Welcome @User.Identity.Name</em></p>
+            }
+        }
+        
         @RenderBody()
         <hr />
         <footer>
