@@ -4,9 +4,6 @@
 
 }
 
-@model StudentGradingSystem.Models.Module
-
-@{ 
     <div class="container">
     @*<br />
     <p><em>Welcome @User.Identity.Name</em></p>
@@ -18,15 +15,15 @@
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="Description">Module Name:</label>
                     <div class="col-sm-10">
-                        <select asp-for="Description" asp-items="@(new SelectList(@ViewBag.ListOfModules,"Id","Value"))" class="form-control">
+                        <select asp-items="@(new SelectList(@ViewBag.ListOfModules,"Id","Value"))" class="form-control">
                         </select>
                         <a href="#">
                             <span class="glyphicon glyphicon-plus-sign"></span>
                         </a>
                     </div>
-                    <label class="control-label col-sm-2" for="Description">Module Details:</label>
+                    <label class="control-label col-sm-2" for="StartTime">Module Details:</label>
                     <div class="col-sm-10">
-                        <select asp-for="Description" asp-items="@(new SelectList(@ViewBag.ModuleDetails,"Id","Value"))" class="form-control">
+                        <select  asp-items="@(new SelectList(@ViewBag.ModuleDetails,"Id","Value"))" class="form-control">
                         </select>
                         <a href="#">
                             <span class="glyphicon glyphicon-plus-sign"></span>
