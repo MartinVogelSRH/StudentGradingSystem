@@ -229,6 +229,7 @@ namespace StudentGradingSystem.Controllers
                             _context.GroupModule.Add(ExampleGroupModule);
                             _context.StudentCourse.Add(ExampleStudentCourse);
                             _context.SaveChanges();
+                            ViewData["SampleDataInserted"] = "True";
             }
 
             
