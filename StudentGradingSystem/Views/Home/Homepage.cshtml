@@ -7,7 +7,11 @@
     function getSelection() {
         var answer = document.getElementById("test");
         if (answer[answer.selectedIndex].value != null) {
-            alert(answer[answer.selectedIndex].value);
+            //alert(answer[answer.selectedIndex].value);
+//window.location.href="/Course/Grade"
+
+var url = "/Course/Grade?name=" + answer[answer.selectedIndex].value ;
+window.location.href = url;
         }
     }
 
